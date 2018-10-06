@@ -1,0 +1,13 @@
+# IntelliJ
+*.iml
+.idea/
+
+# Maven
+target/
+pom.xml.versionsBackup
+.flattened-pom.xml
+
+# Misc
+.vertx
+.factorypath
+.directory
