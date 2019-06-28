@@ -1,4 +1,4 @@
-FROM openjdk:11-jre
+FROM amazoncorretto:11
 
 ARG JAR_FILE
 ENTRYPOINT ["/usr/bin/java", "-Dlog4j2.contextSelector=org.apache.logging.log4j.core.async.AsyncLoggerContextSelector", "-jar", "/usr/share/app/starter-service.jar"]
