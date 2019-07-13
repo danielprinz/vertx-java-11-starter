@@ -6,7 +6,7 @@
 
   <groupId>com.danielprinz</groupId>
   <artifactId>vertx-java11-starter</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.1.0-SNAPSHOT</version>
 
   <properties>
     <main.verticle>com.danielprinz.vertx.java11.MainVerticle</main.verticle>
@@ -14,21 +14,20 @@
 
     <docker-registry>${project.artifactId}</docker-registry>
     <dockerfile-tag>${project.version}</dockerfile-tag>
-    <dockerfile-maven-version>1.4.6</dockerfile-maven-version>
-    <vertx.version>3.6.1</vertx.version>
+    <dockerfile-maven-version>1.4.10</dockerfile-maven-version>
+    <vertx.version>3.7.1</vertx.version>
 
     <!-- Testing -->
-    <junit-jupiter.version>5.3.1</junit-jupiter.version>
-    <junit-platform-surefire-provider.version>1.3.1</junit-platform-surefire-provider.version>
-    <junit-platform-launcher.version>1.3.1</junit-platform-launcher.version>
+    <junit-jupiter.version>5.4.2</junit-jupiter.version>
+    <junit-platform-launcher.version>1.4.2</junit-platform-launcher.version>
     <!-- Logging -->
-    <slf4j.version>1.7.25</slf4j.version>
-    <log4j.version>2.11.1</log4j.version>
+    <slf4j.version>1.7.26</slf4j.version>
+    <log4j.version>2.11.2</log4j.version>
     <disruptor-for-log4j-async.version>3.4.2</disruptor-for-log4j-async.version>
     <!-- Plugins -->
-    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-    <maven-shade-plugin.version>3.2.0</maven-shade-plugin.version>
-    <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
+    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
     <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     <maven_dependency_plugin.version>3.1.1</maven_dependency_plugin.version>
@@ -96,7 +95,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>${maven-compiler-plugin.version}</version>
           <configuration>
             <release>11</release>
           </configuration>
@@ -138,17 +137,7 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
-        <configuration>
-          <argLine>
-            --illegal-access=permit
-          </argLine>
-        </configuration>
         <dependencies>
-          <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-surefire-provider</artifactId>
-            <version>${junit-platform-surefire-provider.version}</version>
-          </dependency>
           <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
