@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(VertxExtension.class)
-public class MainVerticleTest {
+class MainVerticleTest {
 
   @BeforeEach
   void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
